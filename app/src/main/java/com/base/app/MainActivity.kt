@@ -3,6 +3,7 @@ package com.base.app
 import android.content.Context
 import android.content.SharedPreferences
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
@@ -35,8 +36,7 @@ class MainActivity : AppCompatActivity(), HasSupportFragmentInjector {
             pendingTransitions = when (destination.id) {
                 R.id.navigation_first_screen,
                 R.id.navigation_second_screen,
-                R.id.navigation_third_screen,
-                R.id.navigation_fourth_screen-> {
+                R.id.navigation_third_screen -> {
                     {
                         bottom_nav_view.show()
                     }
@@ -49,7 +49,7 @@ class MainActivity : AppCompatActivity(), HasSupportFragmentInjector {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        sharedPref = getSharedPreferences(Constants.USER_CREDENTIALS, Context.MODE_PRIVATE)
+        sharedPref = getSharedPreferences(Constants.USER_DETAILS, Context.MODE_PRIVATE)
         if (sharedPref.getBoolean(LOGGED_IN, false))
             setTheme(R.style.DashboardTheme)
         else
@@ -75,6 +75,7 @@ class MainActivity : AppCompatActivity(), HasSupportFragmentInjector {
     }
 
     private fun setupViewWithLoginStatus() {
+        Log.i("qwerty","setupViewWithLoginStatus")
         isLoggedIn = sharedPref
             .getBoolean(LOGGED_IN, false)
         var navGraph = R.navigation.dashboard_nav_graph
@@ -93,7 +94,7 @@ class MainActivity : AppCompatActivity(), HasSupportFragmentInjector {
             setLogo(
                 ContextCompat.getDrawable(
                     this@MainActivity,
-                    R.drawable.ic_launcher_background
+                    R.drawable.ic_f
                 )
             )
         }

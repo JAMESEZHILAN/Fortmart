@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <color name="colorPrimary">#E8505B</color>
-    <color name="colorPrimaryDark">#F9D56E</color>
-    <color name="colorAccent">#19B0AB</color>
+    <color name="colorPrimary">#ECF3F3</color>
+    <color name="colorPrimaryDark">#E8505B</color>
+    <color name="colorAccent">#2CB9F5</color>
 
     <color name="colorRipple">#80efa603</color>
 
@@ -38,8 +38,10 @@
     <color name="colorDocument">#ffce7b</color>
     <color name="colorUploadDocBg">#9298a5</color>
     <color name="colorUnderline">#dfdfdf</color>
-
     <color name="background2">#E6E9EC</color>
     <color name="statements">#f2f3f5</color>
+
+    <color name="colorBlueBackground">#ECF3F3</color>
+    <color name="colorButtonSubmit">#2CB9F5</color>
 
 </resources>

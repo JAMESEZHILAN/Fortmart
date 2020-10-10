@@ -25,7 +25,7 @@
         android:background="?android:attr/windowBackground"
         android:theme="@style/MyRippleTheme"
         android:visibility="gone"
-        app:itemIconSize="@dimen/size_18"
+        app:itemIconSize="@dimen/size_24"
         app:itemIconTint="@drawable/bottom_navigation_selector"
         app:itemTextColor="@drawable/bottom_navigation_selector"
         app:layout_constraintBottom_toBottomOf="parent"

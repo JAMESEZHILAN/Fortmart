@@ -6,8 +6,8 @@ import com.base.app.ui.dashboard.first.details.action.ActionFragment
 import com.base.app.ui.dashboard.fourth.FourthFragment
 import com.base.app.ui.dashboard.second.SecondFragment
 import com.base.app.ui.dashboard.third.ThirdFragment
-import com.base.app.ui.login.otp.OtpFragment
 import com.base.app.ui.login.login.LoginFragment
+import com.base.app.ui.login.language.LanguageFragment
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
@@ -15,10 +15,10 @@ import dagger.android.ContributesAndroidInjector
 abstract class FragmentsModule {
 
     @ContributesAndroidInjector
-    abstract fun contributeUsernameFragment(): LoginFragment
+    abstract fun contributeUsernameFragment(): LanguageFragment
 
     @ContributesAndroidInjector
-    abstract fun contributeOtpFragment(): OtpFragment
+    abstract fun contributeOtpFragment(): LoginFragment
 
     @ContributesAndroidInjector
     abstract fun contributeFirstFragment(): FirstFragment

@@ -4,12 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="phoneSubmitClickListener"
             type="android.view.View.OnClickListener" />
+
         <variable
             name="otpSubmitClickListener"
             type="android.view.View.OnClickListener" />
+
         <variable
             name="resendClicklistener"
             type="android.view.View.OnClickListener" />
@@ -19,7 +22,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:animateLayoutChanges="true"
-        android:background="@color/colorWhite"
+        android:background="@color/colorBlueBackground"
         tools:context=".ui.login.login.LoginFragment">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -39,7 +42,7 @@
                 android:layout_marginStart="@dimen/size_24"
                 android:layout_marginEnd="@dimen/size_24"
                 android:background="@drawable/bg_login_edittext"
-                android:drawableStart="@drawable/ic_username"
+                android:drawableStart="@drawable/ic_phone"
                 android:drawablePadding="@dimen/size_16"
                 android:elevation="@dimen/size_04"
                 android:ems="10"
@@ -62,7 +65,7 @@
                 android:orientation="horizontal"
                 app:layout_constraintGuide_percent=".25" />
 
-            <ImageButton
+            <Button
                 android:id="@+id/PhoneSubmit"
                 style="?android:selectableItemBackground"
                 android:layout_width="wrap_content"
@@ -74,10 +77,12 @@
                 android:elevation="@dimen/size_08"
                 android:focusable="false"
                 android:onClick="@{phoneSubmitClickListener}"
-                android:padding="@dimen/size_16"
+                android:text="Go"
+                android:textAllCaps="false"
+                android:textColor="@color/colorTextWhite"
+                android:textSize="@dimen/text_size_20"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editTextUsername"
-                app:srcCompat="@drawable/ic_next" />
+                app:layout_constraintTop_toBottomOf="@+id/editTextUsername" />
 
             <TextView
                 android:id="@+id/PhoneTitle"
@@ -253,7 +258,7 @@
                 android:orientation="horizontal"
                 app:layout_constraintGuide_percent=".25" />
 
-            <ImageButton
+            <Button
                 android:id="@+id/submit"
                 style="?android:selectableItemBackground"
                 android:layout_width="wrap_content"
@@ -261,14 +266,16 @@
                 android:layout_marginTop="@dimen/size_50"
                 android:layout_marginEnd="@dimen/size_50"
                 android:background="@drawable/bg_submit"
-                android:clickable="true"
+                android:clickable="false"
                 android:elevation="@dimen/size_08"
-                android:focusable="true"
+                android:focusable="false"
                 android:onClick="@{otpSubmitClickListener}"
-                android:padding="@dimen/size_16"
+                android:text="Go"
+                android:textAllCaps="false"
+                android:textColor="@color/colorTextWhite"
+                android:textSize="@dimen/text_size_20"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/otpSet"
-                app:srcCompat="@drawable/ic_next" />
+                app:layout_constraintTop_toBottomOf="@+id/otpSet" />
 
             <TextView
                 android:id="@+id/title"
@@ -305,7 +312,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/montserrat_regular"
                 android:paddingEnd="@dimen/size_08"
-                android:textColor="@color/colorPrimary"
+                android:textColor="@color/colorAccent"
                 android:textSize="@dimen/size_18"
                 app:layout_constraintEnd_toEndOf="@+id/resendCode"
                 app:layout_constraintTop_toBottomOf="@+id/resendCode" />

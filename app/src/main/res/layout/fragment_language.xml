@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="submitClickListener"
+            type="android.view.View.OnClickListener" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:animateLayoutChanges="true"
+        android:background="@color/colorBlueBackground"
+        tools:context=".ui.login.language.LanguageFragment">
+
+        <RadioGroup
+            android:id="@+id/languageRadioGroup"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:orientation="vertical"
+            android:padding="@dimen/size_16"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/english"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/size_04"
+                android:background="@drawable/bg_language_radio_button"
+                android:buttonTint="@color/colorAccent"
+                android:checked="true"
+                android:elevation="@dimen/size_04"
+                android:gravity="center"
+                android:padding="@dimen/size_16"
+                android:paddingEnd="@dimen/size_40"
+                android:text="English"
+                android:textSize="@dimen/text_size_18" />
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/tamil"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/size_04"
+                android:background="@drawable/bg_language_radio_button"
+                android:buttonTint="@color/colorAccent"
+                android:elevation="@dimen/size_04"
+                android:gravity="center"
+                android:padding="@dimen/size_16"
+                android:paddingEnd="@dimen/size_40"
+                android:text="தமிழ்"
+                android:textSize="@dimen/text_size_18" />
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/phoneSubmit"
+            style="?android:selectableItemBackground"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/size_40"
+            android:layout_marginTop="@dimen/size_16"
+            android:background="@drawable/bg_submit"
+            android:clickable="false"
+            android:elevation="@dimen/size_08"
+            android:focusable="false"
+            android:onClick="@{submitClickListener}"
+            android:text="Go"
+            android:textAllCaps="false"
+            android:textColor="@color/colorTextWhite"
+            android:textSize="@dimen/text_size_20"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/languageRadioGroup" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

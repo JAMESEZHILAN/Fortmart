@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/navigation_first_screen"
         android:name="com.base.app.ui.dashboard.first.FirstFragment"
-        android:label="@string/title_first"
+        android:label="@string/title_home"
         tools:layout="@layout/fragment_first">
         <action
             android:id="@+id/actionToDetails"
@@ -24,13 +24,13 @@
     <fragment
         android:id="@+id/navigation_second_screen"
         android:name="com.base.app.ui.dashboard.second.SecondFragment"
-        android:label="@string/title_second"
+        android:label="@string/title_ad"
         tools:layout="@layout/fragment_second" />
 
     <fragment
         android:id="@+id/navigation_third_screen"
         android:name="com.base.app.ui.dashboard.third.ThirdFragment"
-        android:label="@string/title_third"
+        android:label="@string/title_settings"
         tools:layout="@layout/fragment_third" />
 
     <fragment
@@ -60,11 +60,5 @@
         android:name="com.base.app.ui.dashboard.first.details.action.ActionFragment"
         android:label="@string/title_action_screen"
         tools:layout="@layout/fragment_action" />
-
-    <fragment
-        android:id="@+id/navigation_fourth_screen"
-        android:name="com.base.app.ui.dashboard.fourth.FourthFragment"
-        android:label="@string/title_four"
-        tools:layout="@layout/fragment_fourth" />
 
 </navigation>

@@ -8,7 +8,6 @@ import com.base.app.ui.dashboard.first.details.action.ActionViewModel
 import com.base.app.ui.dashboard.fourth.FourthViewModel
 import com.base.app.ui.dashboard.second.SecondViewModel
 import com.base.app.ui.dashboard.third.ThirdViewModel
-import com.base.app.ui.login.otp.OtpViewModel
 import com.base.app.ui.login.login.LoginViewModel
 import dagger.Binds
 import dagger.Module
@@ -20,12 +19,7 @@ abstract class ViewModelModule {
     @Binds
     @IntoMap
     @ViewModelKey(LoginViewModel::class)
-    abstract fun bindUsernameViewModel(viewModel: LoginViewModel): ViewModel
-
-    @Binds
-    @IntoMap
-    @ViewModelKey(OtpViewModel::class)
-    abstract fun bindOtpViewModel(viewModel: OtpViewModel): ViewModel
+    abstract fun bindOtpViewModel(viewModel: LoginViewModel): ViewModel
 
     @Binds
     @IntoMap

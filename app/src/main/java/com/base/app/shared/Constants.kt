@@ -2,13 +2,15 @@ package com.base.app.shared
 
 object Constants {
 
-    const val USER_CREDENTIALS = "userCredentials"
+    const val USER_DETAILS = "userDetails"
     const val LOGGED_IN = "isLoggedIn"
+    const val LANGUAGE = "language"
+    const val ENG = 0
+    const val TML = 1
     const val TOKEN = "token"
     const val PHONE = "phone"
     const val COUNTRY_CODE = "countryCode"
     const val EMAIL = "email"
-    const val USER_DETAILS = "userDetails"
     const val PASSWORD_CREATE = "passwordCreation"
     const val AUTHORIZATION = "Authorization"
     const val CONNECTION = "Connection"
