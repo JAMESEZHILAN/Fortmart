@@ -21,9 +21,5 @@ object Constants {
 
     const val DoubleZeroPadding = "%02d"
 
-    val phoneNumberPattern = Regex("[0-9a-zA-Z]+@[0-9a-zA-Z]+\\.+[0-9a-zA-Z]+$")
-    val emailPattern = Regex("^[0-9]{1,15}")
-
-    var token: String? = ""
-    var temp = "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzbUdNdVJkQ3hUNFJReHJDdFZXZE1SIiwiaWQiOjE5LCJyb2xlSWQiOjEwLCJmaXJzdE5hbWUiOiJ0ZXN0IiwibGFzdE5hbWUiOiJ0ZXN0IiwiaWF0IjoxNTgyMTIwNDE0fQ.m13DWMc-QfIAXuVYGD_R7mRToYSHnOuEvu2Yad9aGiE"
+    val phoneNumberPattern = Regex("^[0-9]{1,15}")
 }

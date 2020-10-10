@@ -16,4 +16,5 @@
     <string name="error_empty_otp">OTP must contain four digit number</string>
     <string name="label_resend_otp_disabled">Resend OTP in</string>
     <string name="label_resend_otp_enabled">Resend OTP</string>
+    <string name="country_code">+91</string>
 </resources>
