@@ -87,19 +87,20 @@ class LoginFragment : Fragment(), Injectable {
             verificationId: String,
             token: PhoneAuthProvider.ForceResendingToken
         ) {
-            otpProgress.hide()
+            loginProgressBar.hide()
             storedVerificationId = verificationId
             resendToken = token
         }
 
         override fun onCodeAutoRetrievalTimeOut(p0: String) {
             super.onCodeAutoRetrievalTimeOut(p0)
-            otpProgress.hide()
+            loginProgressBar.hide()
         }
 
     }
 
     private val phoneSubmitListener = View.OnClickListener {
+        loginProgressBar.show()
         val username = editTextUsername.text.toString()
         if (!username.isBlank()) {
             when {
@@ -122,7 +123,13 @@ class LoginFragment : Fragment(), Injectable {
     }
 
     private val otpSubmitListener = View.OnClickListener {
-        val otpCode = editTextUsername.text.toString()
+        loginProgressBar.show()
+        val otpCode = otp1.text.toString() +
+                    otp2.text.toString() +
+                    otp3.text.toString() +
+                    otp4.text.toString() +
+                    otp5.text.toString() +
+                    otp6.text.toString()
         if (otpCode.isBlank() || otpCode.length == 6) {
             validateManualOTP(otpCode)
         } else {
@@ -131,6 +138,7 @@ class LoginFragment : Fragment(), Injectable {
     }
 
     private val resendClickListener = View.OnClickListener {
+        loginProgressBar.show()
         startResendOTPCountdown()
         initiateVerification()
     }
@@ -209,7 +217,6 @@ class LoginFragment : Fragment(), Injectable {
             .addOnCompleteListener(requireActivity()) { task ->
                 if (task.isSuccessful) {
                     val user = task.result?.user.toString()
-                    showAlert(requireContext(), user)
                     loginToDashboard()
                 } else {
                     if (task.exception is FirebaseAuthInvalidCredentialsException) {
@@ -256,6 +263,7 @@ class LoginFragment : Fragment(), Injectable {
     }
 
     private fun loginToDashboard() {
+        loginProgressBar.hide()
         requireContext().getSharedPreferences(Constants.USER_CREDENTIALS, Context.MODE_PRIVATE)
             .edit()
             .putBoolean(Constants.LOGGED_IN, true).apply()
