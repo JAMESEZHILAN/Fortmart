@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "966565345878",
+    "firebase_url": "https://fortmart-21c66.firebaseio.com",
+    "project_id": "fortmart-21c66",
+    "storage_bucket": "fortmart-21c66.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:966565345878:android:32caa39441a892dec519f7",
+        "android_client_info": {
+          "package_name": "com.fortmart.customer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "966565345878-bp49nj6930kfbh9hqu3iq06soi62etb0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC2ZL8Fd0gJczsM52cCloPR7-frKxpLH7g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "966565345878-bp49nj6930kfbh9hqu3iq06soi62etb0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
