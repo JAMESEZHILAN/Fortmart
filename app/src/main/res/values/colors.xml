@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="colorPrimary">#E8505B</color>
+    <color name="colorPrimaryDark">#F9D56E</color>
+    <color name="colorAccent">#19B0AB</color>
+
+    <color name="colorRipple">#80efa603</color>
+
+    <color name="colorYellowGradientLight">#ffdf9e</color>
+    <color name="colorYellowGradientDark">#ffbb65</color>
+    <color name="colorBlackGradientLight">#222222</color>
+    <color name="colorBlackGradientDark">#141414</color>
+
+    <color name="colorBlack">#000</color>
+    <color name="colorWhite">#FFF</color>
+    <color name="colorBlue">#5777e5</color>
+    <color name="colorRed">#e35353</color>
+    <color name="colorGreen">#89D670</color>
+    <color name="colorLightGrey">#E3E3E3</color>
+    <color name="colorDarkGrey">#686b71</color>
+
+    <color name="colorTextBlack">#000000</color>
+    <color name="colorTextDark">#a3a3a3</color>
+    <color name="colorTextLight">#eaeaea</color>
+    <color name="colorTextLightLabel">#636363</color>
+    <color name="colorTextWhite">#FFFFFF</color>
+
+    <color name="colorBackground">#F0F0F0</color>
+    <color name="colorDisabled">#9c9c9c</color>
+    <color name="colorIconDisabled">#737373</color>
+    <color name="translucent">#40000000</color>
+    <color name="translucentLight">#16FFFFFF</color>
+    <color name="translucentProgressbar">#80FFFFFF</color>
+    <color name="colorTableAlternate">#F9F9F9</color>
+    <color name="colorUploadDoc">#F5F5F5</color>
+    <color name="colorDivider">#eaecef</color>
+    <color name="colorDocument">#ffce7b</color>
+    <color name="colorUploadDocBg">#9298a5</color>
+    <color name="colorUnderline">#dfdfdf</color>
+
+    <color name="background2">#E6E9EC</color>
+    <color name="statements">#f2f3f5</color>
+
+</resources>

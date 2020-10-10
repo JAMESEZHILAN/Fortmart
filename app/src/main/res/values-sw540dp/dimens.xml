@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="text_size_45">59.1dp</dimen>
+    <dimen name="text_size_24">31.5dp</dimen>
+    <dimen name="text_size_20">26.3dp</dimen>
+    <dimen name="text_size_18">23.6dp</dimen>
+    <dimen name="text_size_16">21dp</dimen>
+    <dimen name="text_size_14">18.4dp</dimen>
+    <dimen name="text_size_12">15.8dp</dimen>
+    <dimen name="text_size_10">13.1dp</dimen>
+    <dimen name="size_180">236.48dp</dimen>
+    <dimen name="size_160">210.21dp</dimen>
+    <dimen name="size_100">131.38dp</dimen>
+    <dimen name="size_50">65.69dp</dimen>
+    <dimen name="size_40">52.55dp</dimen>
+    <dimen name="size_32">42.04dp</dimen>
+    <dimen name="size_36">47.3dp</dimen>
+    <dimen name="size_24">31.53dp</dimen>
+    <dimen name="size_20">26.28dp</dimen>
+    <dimen name="size_18">23.65dp</dimen>
+    <dimen name="size_16">21.02dp</dimen>
+    <dimen name="size_14">18.39dp</dimen>
+    <dimen name="size_12">15.77dp</dimen>
+    <dimen name="size_10">13.14dp</dimen>
+    <dimen name="size_08">10.51dp</dimen>
+    <dimen name="size_06">7.88dp</dimen>
+    <dimen name="size_09">11.82dp</dimen>
+    <dimen name="size_04">5.26dp</dimen>
+    <dimen name="size_03">3.94dp</dimen>
+    <dimen name="size_02">2.63dp</dimen>
+    <dimen name="size_75">98.54dp</dimen>
+    <dimen name="size_60">78.83dp</dimen>
+</resources>

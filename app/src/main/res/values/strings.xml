@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Base app</string>
+    <string name="title_first">First</string>
+    <string name="title_second">Second</string>
+    <string name="title_third">Third</string>
+    <string name="title_four">Fourth</string>
+    <string name="title_detail_screen">Detail screen</string>
+    <string name="title_action_screen">Action screen</string>
+    <string name="title_login">Detail screen</string>
+    <string name="title_otp">Action screen</string>
+    <string name="label_logout">Logout</string>
+    <string name="tab_title_pending">Pending</string>
+    <string name="tab_title_accepted">Accepted</string>
+    <string name="error_invalid_username">Invalid</string>
+    <string name="error_username_space">Username can\'t be empty</string>
+    <string name="error_empty_otp">OTP must contain four digit number</string>
+    <string name="label_resend_otp_disabled">Resend OTP in</string>
+    <string name="label_resend_otp_enabled">Resend OTP</string>
+</resources>

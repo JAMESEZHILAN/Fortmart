@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/dashboard_navigation"
+    app:startDestination="@id/navigation_first_screen">
+
+    <fragment
+        android:id="@+id/navigation_first_screen"
+        android:name="com.base.app.ui.dashboard.first.FirstFragment"
+        android:label="@string/title_first"
+        tools:layout="@layout/fragment_first">
+        <action
+            android:id="@+id/actionToDetails"
+            app:destination="@+id/navigation_detail_screen"
+            app:enterAnim="@transition/slide_in"
+            app:popExitAnim="@transition/slide_out">
+            <argument
+                android:name="details"
+                app:argType="com.base.app.model.response.Details" />
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_second_screen"
+        android:name="com.base.app.ui.dashboard.second.SecondFragment"
+        android:label="@string/title_second"
+        tools:layout="@layout/fragment_second" />
+
+    <fragment
+        android:id="@+id/navigation_third_screen"
+        android:name="com.base.app.ui.dashboard.third.ThirdFragment"
+        android:label="@string/title_third"
+        tools:layout="@layout/fragment_third" />
+
+    <fragment
+        android:id="@+id/navigation_detail_screen"
+        android:name="com.base.app.ui.dashboard.first.details.DetailFragment"
+        android:label="@string/title_detail_screen"
+        tools:layout="@layout/fragment_detail">
+        <argument
+            android:name="details"
+            android:defaultValue="@null"
+            app:argType="com.base.app.model.response.Details"
+            app:nullable="true" />
+        <action
+            android:id="@+id/actionToAction"
+            app:destination="@id/navigation_action_screen"
+            app:enterAnim="@transition/slide_in"
+            app:popExitAnim="@transition/slide_out">
+            <argument
+                android:name="id"
+                app:argType="integer" />
+        </action>
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/navigation_action_screen"
+        android:name="com.base.app.ui.dashboard.first.details.action.ActionFragment"
+        android:label="@string/title_action_screen"
+        tools:layout="@layout/fragment_action" />
+
+    <fragment
+        android:id="@+id/navigation_fourth_screen"
+        android:name="com.base.app.ui.dashboard.fourth.FourthFragment"
+        android:label="@string/title_four"
+        tools:layout="@layout/fragment_fourth" />
+
+</navigation>

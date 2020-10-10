@@ -1,0 +1,37 @@
+<resources>
+
+    <style name="MainTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:fontFamily">@font/montserrat_regular</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+    <style name="MySplashTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowBackground">@drawable/bg_splashscreen</item>
+    </style>
+
+    <style name="DashboardTheme" parent="MainTheme">
+        <item name="actionBarTheme">@style/DarkActionBarTheme</item>
+    </style>
+    <style name="DarkActionBarTheme" parent="ThemeOverlay.AppCompat.ActionBar">
+        <item name="colorControlNormal">@color/colorBlack</item>
+        <item name="actionBarStyle">@style/DarkActionBarStyle</item>
+    </style>
+    <style name="DarkActionBarStyle" parent="Widget.AppCompat.Light.ActionBar">
+        <item name="background">@color/colorBlackGradientDark</item>
+        <item name="titleTextAppearance">@style/ActionBarTextAppearance</item>
+        <item name="elevation">@null</item>
+    </style>
+    <style name="ActionBarTextAppearance" parent="TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="fontFamily">@font/montserrat_bold</item>
+    </style>
+    <style name="MyRippleTheme" parent="MainTheme">
+        <item name="colorControlHighlight">@color/colorRipple</item>
+    </style>
+    <style name="MyTabTheme" parent="MainTheme">
+        <item name="colorPrimaryDark">@color/colorAccent</item>
+        <item name="colorControlHighlight">@color/colorRipple</item>
+    </style>
+</resources>
