@@ -9,7 +9,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.cancelChildren
 
-abstract class DashboardFragment: Fragment() {
+abstract class BaseFragment(id:Int): Fragment(id) {
 
     private val parentJob = Job()
     val coroutineScope: CoroutineScope = CoroutineScope(Dispatchers.Main + parentJob)

@@ -1,4 +1,4 @@
-package com.base.app.ui.dashboard.first.details.action
+package com.base.app.ui.dashboard.stores.storeList.action
 
 import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle

@@ -2,10 +2,9 @@ package com.base.app.di
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.base.app.ui.dashboard.first.FirstViewModel
-import com.base.app.ui.dashboard.first.details.DetailViewModel
-import com.base.app.ui.dashboard.first.details.action.ActionViewModel
-import com.base.app.ui.dashboard.fourth.FourthViewModel
+import com.base.app.ui.dashboard.stores.StoresViewModel
+import com.base.app.ui.dashboard.stores.storeList.StoreListViewModel
+import com.base.app.ui.dashboard.stores.storeList.action.ActionViewModel
 import com.base.app.ui.dashboard.second.SecondViewModel
 import com.base.app.ui.dashboard.third.ThirdViewModel
 import com.base.app.ui.login.login.LoginViewModel
@@ -23,8 +22,8 @@ abstract class ViewModelModule {
 
     @Binds
     @IntoMap
-    @ViewModelKey(FirstViewModel::class)
-    abstract fun bindFirstViewModel(viewModel: FirstViewModel): ViewModel
+    @ViewModelKey(StoresViewModel::class)
+    abstract fun bindFirstViewModel(viewModel: StoresViewModel): ViewModel
 
     @Binds
     @IntoMap
@@ -38,13 +37,8 @@ abstract class ViewModelModule {
 
     @Binds
     @IntoMap
-    @ViewModelKey(FourthViewModel::class)
-    abstract fun bindFourthViewModel(viewModel: FourthViewModel): ViewModel
-
-    @Binds
-    @IntoMap
-    @ViewModelKey(DetailViewModel::class)
-    abstract fun bindDetailViewModel(viewModel: DetailViewModel): ViewModel
+    @ViewModelKey(StoreListViewModel::class)
+    abstract fun bindDetailViewModel(viewModel: StoreListViewModel): ViewModel
 
     @Binds
     @IntoMap

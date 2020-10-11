@@ -1,9 +1,8 @@
 package com.base.app.di
 
-import com.base.app.ui.dashboard.first.FirstFragment
-import com.base.app.ui.dashboard.first.details.DetailFragment
-import com.base.app.ui.dashboard.first.details.action.ActionFragment
-import com.base.app.ui.dashboard.fourth.FourthFragment
+import com.base.app.ui.dashboard.stores.StoresFragment
+import com.base.app.ui.dashboard.stores.storeList.StoreListFragment
+import com.base.app.ui.dashboard.stores.storeList.action.ActionFragment
 import com.base.app.ui.dashboard.second.SecondFragment
 import com.base.app.ui.dashboard.third.ThirdFragment
 import com.base.app.ui.login.login.LoginFragment
@@ -21,7 +20,7 @@ abstract class FragmentsModule {
     abstract fun contributeOtpFragment(): LoginFragment
 
     @ContributesAndroidInjector
-    abstract fun contributeFirstFragment(): FirstFragment
+    abstract fun contributeFirstFragment(): StoresFragment
 
     @ContributesAndroidInjector
     abstract fun contributeSecondFragment(): SecondFragment
@@ -30,10 +29,7 @@ abstract class FragmentsModule {
     abstract fun contributeThirdFragment(): ThirdFragment
 
     @ContributesAndroidInjector
-    abstract fun contributeFourthFragment(): FourthFragment
-
-    @ContributesAndroidInjector
-    abstract fun contributeDetailFragment(): DetailFragment
+    abstract fun contributeDetailFragment(): StoreListFragment
 
     @ContributesAndroidInjector
     abstract fun contributeActionFragment(): ActionFragment

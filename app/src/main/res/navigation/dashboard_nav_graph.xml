@@ -7,18 +7,14 @@
 
     <fragment
         android:id="@+id/navigation_first_screen"
-        android:name="com.base.app.ui.dashboard.first.FirstFragment"
+        android:name="com.base.app.ui.dashboard.stores.StoresFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_first">
+        tools:layout="@layout/fragment_stores">
         <action
             android:id="@+id/actionToDetails"
             app:destination="@+id/navigation_detail_screen"
             app:enterAnim="@transition/slide_in"
-            app:popExitAnim="@transition/slide_out">
-            <argument
-                android:name="details"
-                app:argType="com.base.app.model.response.Details" />
-        </action>
+            app:popExitAnim="@transition/slide_out"/>
     </fragment>
 
     <fragment
@@ -35,14 +31,9 @@
 
     <fragment
         android:id="@+id/navigation_detail_screen"
-        android:name="com.base.app.ui.dashboard.first.details.DetailFragment"
+        android:name="com.base.app.ui.dashboard.stores.storeList.StoreListFragment"
         android:label="@string/title_detail_screen"
-        tools:layout="@layout/fragment_detail">
-        <argument
-            android:name="details"
-            android:defaultValue="@null"
-            app:argType="com.base.app.model.response.Details"
-            app:nullable="true" />
+        tools:layout="@layout/fragment_store_list">
         <action
             android:id="@+id/actionToAction"
             app:destination="@id/navigation_action_screen"
@@ -57,7 +48,7 @@
 
     <fragment
         android:id="@+id/navigation_action_screen"
-        android:name="com.base.app.ui.dashboard.first.details.action.ActionFragment"
+        android:name="com.base.app.ui.dashboard.stores.storeList.action.ActionFragment"
         android:label="@string/title_action_screen"
         tools:layout="@layout/fragment_action" />
 

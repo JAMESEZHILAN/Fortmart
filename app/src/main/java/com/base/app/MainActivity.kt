@@ -2,8 +2,11 @@ package com.base.app
 
 import android.content.Context
 import android.content.SharedPreferences
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.util.Log
+import android.widget.TextView
+import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
@@ -37,8 +40,39 @@ class MainActivity : AppCompatActivity(), HasSupportFragmentInjector {
                 R.id.navigation_first_screen,
                 R.id.navigation_second_screen,
                 R.id.navigation_third_screen -> {
+                    bottom_nav_view.show();
                     {
-                        bottom_nav_view.show()
+                        supportActionBar?.hide()
+                    }
+                }
+                R.id.navigation_detail_screen ->{
+                    supportActionBar?.show()
+                    bottom_nav_view.hide();
+                    {
+                        supportActionBar?.apply {
+                            setBackgroundDrawable(
+                                ColorDrawable(
+                                    ContextCompat.getColor(
+                                        this@MainActivity,
+                                        R.color.colorBlueBackground
+                                    )
+                                )
+                            )
+                            setDisplayShowTitleEnabled(true)
+                            setDisplayUseLogoEnabled(false)
+                            setDisplayShowCustomEnabled(true)
+                            displayOptions = ActionBar.DISPLAY_SHOW_CUSTOM
+                            setCustomView(R.layout.actionbar_light)
+                            val title = findViewById<TextView>(
+                                resources.getIdentifier(
+                                    "action_bar_title",
+                                    "id",
+                                    packageName
+                                )
+                            )
+                            title.text = controller.currentDestination?.label
+                            setDisplayHomeAsUpEnabled(true)
+                        }
                     }
                 }
                 else -> {
