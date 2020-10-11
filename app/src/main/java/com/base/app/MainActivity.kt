@@ -75,7 +75,6 @@ class MainActivity : AppCompatActivity(), HasSupportFragmentInjector {
     }
 
     private fun setupViewWithLoginStatus() {
-        Log.i("qwerty","setupViewWithLoginStatus")
         isLoggedIn = sharedPref
             .getBoolean(LOGGED_IN, false)
         var navGraph = R.navigation.dashboard_nav_graph

@@ -48,11 +48,10 @@ class LoginFragment : Fragment(), Injectable {
     private lateinit var verifiedPhoneNumber: String
     private lateinit var mFirebaseAuth: FirebaseAuth
     private var resendToken: PhoneAuthProvider.ForceResendingToken? = null
+    private lateinit var otpResendCountDown: CountDownTimer
 
     private val callbacks = object : PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
-
         override fun onVerificationCompleted(credential: PhoneAuthCredential) {
-            Log.i("qwerty","onVerificationCompleted")
             // This callback will be invoked in two situations:
             // 1 - Instant verification. In some cases the phone number can be instantly
             //     verified without needing to send or enter a verification code.
@@ -67,9 +66,7 @@ class LoginFragment : Fragment(), Injectable {
             otp6.setText("${credential.smsCode?.get(5)}")
             signInWithPhoneAuthCredential(credential)
         }
-
         override fun onVerificationFailed(e: FirebaseException) {
-            Log.i("qwerty","onVerificationFailed")
             otpScreen.hide()
             phoneNumberScreen.show()
             val message = when (e) {
@@ -85,22 +82,18 @@ class LoginFragment : Fragment(), Injectable {
             }
             showAlert(requireContext(), message)
         }
-
         override fun onCodeSent(
             verificationId: String,
             token: PhoneAuthProvider.ForceResendingToken
         ) {
-            Log.i("qwerty","onCodeSent")
             loginProgressBar.hide()
             storedVerificationId = verificationId
             resendToken = token
         }
-
         override fun onCodeAutoRetrievalTimeOut(p0: String) {
             super.onCodeAutoRetrievalTimeOut(p0)
             loginProgressBar.hide()
         }
-
     }
 
     private val phoneSubmitListener = View.OnClickListener {
@@ -136,10 +129,8 @@ class LoginFragment : Fragment(), Injectable {
                 otp5.text.toString() +
                 otp6.text.toString()
         if (otpCode.isBlank() || otpCode.length == 6) {
-            Log.i("qwerty","otp valid")
-            validateManualOTP(otpCode)
+            signInWithPhoneAuthCredential(PhoneAuthProvider.getCredential(storedVerificationId, otpCode))
         } else {
-            Log.i("qwerty","otp invalid")
             binding.error.text = getString(R.string.error_empty_otp)
         }
     }
@@ -154,7 +145,6 @@ class LoginFragment : Fragment(), Injectable {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        (activity as MainActivity).supportActionBar?.setDisplayHomeAsUpEnabled(false)
         binding = FragmentLoginBinding.inflate(inflater, container, false)
         binding.phoneSubmitClickListener = phoneSubmitListener
         binding.otpSubmitClickListener = otpSubmitListener
@@ -201,7 +191,6 @@ class LoginFragment : Fragment(), Injectable {
     }
 
     private fun initiateVerification() {
-        Log.i("qwerty","initiateVerification")
         PhoneAuthProvider.getInstance().verifyPhoneNumber(
             verifiedPhoneNumber,
             60,
@@ -213,13 +202,11 @@ class LoginFragment : Fragment(), Injectable {
     }
 
     private fun signInWithPhoneAuthCredential(credential: PhoneAuthCredential) {
-        Log.i("qwerty","signInWithPhoneAuthCredential")
         mFirebaseAuth.signInWithCredential(credential)
             .addOnCompleteListener(requireActivity()) { task ->
-                Log.i("qwerty","Complete")
                 if (task.isSuccessful) {
                     val user = task.result?.user.toString()
-                    Log.i("qwerty","Successful")
+                    //TODO get auth token from api using 'user' param & in success call 'loginToDashboard()'
                     loginToDashboard()
                 } else {
                     if (task.exception is FirebaseAuthInvalidCredentialsException) {
@@ -229,17 +216,8 @@ class LoginFragment : Fragment(), Injectable {
                     }
                 }
             }
-            .addOnFailureListener {
-                Log.i("qwerty","Failure")
-            }
     }
 
-    private fun validateManualOTP(code: String) {
-        Log.i("qwerty","validateManualOTP")
-        signInWithPhoneAuthCredential(PhoneAuthProvider.getCredential(storedVerificationId, code))
-    }
-
-    private lateinit var otpResendCountDown: CountDownTimer
     private fun startResendOTPCountdown() {
         resendCode.text = getString(R.string.label_resend_otp_disabled)
         resendCode.textSize = 14f
@@ -249,7 +227,7 @@ class LoginFragment : Fragment(), Injectable {
                 R.color.colorTextDark
             )
         )
-        if (!::otpResendCountDown.isInitialized)
+        if (!::otpResendCountDown.isInitialized) {
             otpResendCountDown = object : CountDownTimer(59000, 1000) {
                 override fun onFinish() {
                     if (this@LoginFragment.isVisible && !this@LoginFragment.isRemoving) {
@@ -268,11 +246,13 @@ class LoginFragment : Fragment(), Injectable {
                 override fun onTick(millisUntilFinished: Long) {
                     countDown.text = timerConverter(millisUntilFinished)
                 }
-            }.start()
+            }
+        }
+        otpResendCountDown.cancel()
+        otpResendCountDown.start()
     }
 
     private fun loginToDashboard() {
-        Log.i("qwerty","loginToDashboard")
         requireContext().getSharedPreferences(Constants.USER_DETAILS, Context.MODE_PRIVATE)
             .edit()
             .putBoolean(Constants.LOGGED_IN, true).apply()
