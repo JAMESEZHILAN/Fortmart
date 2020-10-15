@@ -6,7 +6,7 @@
     app:startDestination="@id/navigation_language">
     <fragment
         android:id="@+id/navigation_language"
-        android:name="com.base.app.ui.login.language.LanguageFragment"
+        android:name="com.fortmart.customer.ui.login.language.LanguageFragment"
         android:label="@string/title_language"
         tools:layout="@layout/fragment_language">
         <action
@@ -15,7 +15,7 @@
     </fragment>
     <fragment
         android:id="@+id/navigation_login"
-        android:name="com.base.app.ui.login.login.LoginFragment"
+        android:name="com.fortmart.customer.ui.login.login.LoginFragment"
         android:label="@string/title_login"
         tools:layout="@layout/fragment_login"/>
 </navigation>

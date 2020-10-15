@@ -14,7 +14,7 @@
     </style>
 
     <style name="LoginActionBarStyle" parent="Widget.AppCompat.Light.ActionBar">
-        <item name="background">@color/colorPrimary</item>
+        <item name="background">@color/colorWhite</item>
         <item name="elevation">@null</item>
     </style>
 
@@ -50,4 +50,11 @@
         <item name="colorPrimaryDark">@color/colorAccent</item>
         <item name="colorControlHighlight">@color/colorRipple</item>
     </style>
+
+
+    <style name="LanguageRadioButtonStyle" parent="Widget.AppCompat.CompoundButton.RadioButton">
+        <item name="android:background">@drawable/selector_language_radio</item>
+        <item name="android:button">@null</item>
+    </style>
+
 </resources>

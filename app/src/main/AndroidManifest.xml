@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.base.app">
+    package="com.fortmart.customer">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:name="com.base.app.MainApplication"
+        android:name="com.fortmart.customer.MainApplication"
         android:allowBackup="false"
         android:fullBackupContent="false"
         android:icon="@mipmap/ic_launcher"
@@ -14,7 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/MySplashTheme">
 
-        <activity android:name="com.base.app.MainActivity" >
+        <activity android:name="com.fortmart.customer.MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

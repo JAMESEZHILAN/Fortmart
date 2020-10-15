@@ -3,53 +3,64 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/dashboard_navigation"
-    app:startDestination="@id/navigation_first_screen">
+    app:startDestination="@id/navigation_stores">
 
     <fragment
-        android:id="@+id/navigation_first_screen"
-        android:name="com.base.app.ui.dashboard.stores.StoresFragment"
+        android:id="@+id/navigation_stores"
+        android:name="com.fortmart.customer.ui.dashboard.stores.StoresFragment"
         android:label="@string/title_home"
         tools:layout="@layout/fragment_stores">
         <action
-            android:id="@+id/actionToDetails"
-            app:destination="@+id/navigation_detail_screen"
+            android:id="@+id/actionToStoreList"
+            app:destination="@+id/navigation_store_list"
             app:enterAnim="@transition/slide_in"
             app:popExitAnim="@transition/slide_out"/>
     </fragment>
 
     <fragment
         android:id="@+id/navigation_second_screen"
-        android:name="com.base.app.ui.dashboard.second.SecondFragment"
+        android:name="com.fortmart.customer.ui.dashboard.second.SecondFragment"
         android:label="@string/title_ad"
         tools:layout="@layout/fragment_second" />
 
     <fragment
         android:id="@+id/navigation_third_screen"
-        android:name="com.base.app.ui.dashboard.third.ThirdFragment"
+        android:name="com.fortmart.customer.ui.dashboard.third.ThirdFragment"
         android:label="@string/title_settings"
         tools:layout="@layout/fragment_third" />
 
     <fragment
-        android:id="@+id/navigation_detail_screen"
-        android:name="com.base.app.ui.dashboard.stores.storeList.StoreListFragment"
+        android:id="@+id/navigation_store_list"
+        android:name="com.fortmart.customer.ui.dashboard.stores.storeList.StoreListFragment"
         android:label="@string/title_detail_screen"
+        app:enterAnim="@transition/slide_in"
+        app:popExitAnim="@transition/slide_out"
         tools:layout="@layout/fragment_store_list">
         <action
-            android:id="@+id/actionToAction"
-            app:destination="@id/navigation_action_screen"
+            android:id="@+id/actionToCategoryList"
+            app:destination="@id/navigation_category_list"
             app:enterAnim="@transition/slide_in"
-            app:popExitAnim="@transition/slide_out">
-            <argument
-                android:name="id"
-                app:argType="integer" />
-        </action>
+            app:popExitAnim="@transition/slide_out"/>
     </fragment>
 
 
     <fragment
-        android:id="@+id/navigation_action_screen"
-        android:name="com.base.app.ui.dashboard.stores.storeList.action.ActionFragment"
-        android:label="@string/title_action_screen"
-        tools:layout="@layout/fragment_action" />
+        android:id="@+id/navigation_category_list"
+        android:name="com.fortmart.customer.ui.dashboard.stores.storeList.categoryList.CategoryListFragment"
+        android:label="@string/title_category_list"
+        app:enterAnim="@transition/slide_in"
+        app:popExitAnim="@transition/slide_out"
+        tools:layout="@layout/fragment_category_list" >
+        <action
+            android:id="@+id/actionToProductList"
+            app:destination="@id/navigation_product_list" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_product_list"
+        android:name="com.fortmart.customer.ui.dashboard.stores.storeList.categoryList.productList.ProductListFragment"
+        android:label="@string/title_product_list"
+        app:enterAnim="@transition/slide_in"
+        app:popExitAnim="@transition/slide_out"
+        tools:layout="@layout/fragment_product_list" />
 
 </navigation>
