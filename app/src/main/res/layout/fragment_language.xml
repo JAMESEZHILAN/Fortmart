@@ -25,7 +25,7 @@
             android:background="@drawable/bg_language_radio_button"
             android:elevation="@dimen/size_04"
             android:orientation="vertical"
-            app:layout_constraintBottom_toTopOf="@+id/phoneSubmit"
+            app:layout_constraintBottom_toTopOf="@+id/ButtonNext"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView2"
@@ -61,7 +61,7 @@
         </RadioGroup>
 
         <Button
-            android:id="@+id/phoneSubmit"
+            android:id="@+id/ButtonNext"
             style="?android:selectableItemBackground"
             android:layout_width="0dp"
             android:layout_height="wrap_content"

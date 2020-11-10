@@ -1,6 +1,8 @@
-<vector android:autoMirrored="true" android:height="268dp"
+<vector android:autoMirrored="true"
+    android:height="268dp"
+    android:width="306dp"
     android:viewportHeight="268" android:viewportWidth="306"
-    android:width="306dp" xmlns:android="http://schemas.android.com/apk/res/android">
+    xmlns:android="http://schemas.android.com/apk/res/android">
     <group>
         <clip-path android:pathData="M0,0h305.291v268h-305.291z"/>
         <path android:fillColor="#3F3D56" android:pathData="M199.017,268C188.762,266.263 178.9,264.771 169.431,263.524L173.174,256.266C171.912,255.827 166.366,259.984 166.366,259.984L171.279,238.915C164.93,239.681 161.702,261.193 161.702,261.193L154.609,253.92L158.043,262.097C129.06,258.684 104.03,257.418 82.977,257.373L86.181,251.16C84.918,250.722 79.372,254.878 79.372,254.878L84.285,233.81C77.937,234.575 74.709,256.088 74.709,256.088L67.615,248.815L71.253,257.475C56.828,257.714 42.425,258.692 28.1,260.407C31.341,250.729 42.35,241.525 42.35,241.525C33.943,244.025 29.532,248.216 27.228,252.122C27.022,232.154 30.342,212.306 37.036,193.492C37.036,193.492 19.657,231.309 21.875,256.693L22.14,261.201C7.407,263.311 0,265.505 0,265.505L199.017,268Z"/>

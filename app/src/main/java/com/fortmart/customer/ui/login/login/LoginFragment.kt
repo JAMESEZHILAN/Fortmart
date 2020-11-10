@@ -4,9 +4,15 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.os.CountDownTimer
+import android.text.SpannableString
+import android.text.Spanned
+import android.text.TextPaint
+import android.text.method.LinkMovementMethod
+import android.text.style.ClickableSpan
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
@@ -29,6 +35,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import java.util.concurrent.TimeUnit
 import javax.inject.Inject
+
 
 class LoginFragment : Fragment(), Injectable {
 
@@ -100,6 +107,7 @@ class LoginFragment : Fragment(), Injectable {
         if (!username.isBlank()) {
             when {
                 username.matches(Constants.phoneNumberPattern) -> {
+                    loginProgressBar.hide()
                     verifiedPhoneNumber = getString(R.string.country_code) + username
                     phoneNumberScreen.hide()
                     otpScreen.show()
@@ -107,14 +115,16 @@ class LoginFragment : Fragment(), Injectable {
                     title.text =
                         "Enter the OTP sent to ${getString(R.string.country_code)} $username"
                     startResendOTPCountdown()
-                    initiateVerification()
+//                    initiateVerification()
                 }
                 else -> {
-                    binding.error.text = getString(R.string.error_invalid_username)
+                    binding.editTextUsername.error = getString(R.string.error_invalid_username)
+                    loginProgressBar.hide()
                 }
             }
         } else {
-            binding.error.text = getString(R.string.error_username_space)
+            binding.editTextUsername.error = getString(R.string.error_username_space)
+            loginProgressBar.hide()
         }
     }
 
@@ -127,9 +137,17 @@ class LoginFragment : Fragment(), Injectable {
                 otp5.text.toString() +
                 otp6.text.toString()
         if (otpCode.isBlank() || otpCode.length == 6) {
-            signInWithPhoneAuthCredential(PhoneAuthProvider.getCredential(storedVerificationId, otpCode))
+            loginToDashboard()
+//            signInWithPhoneAuthCredential(
+//                PhoneAuthProvider.getCredential(
+//                    storedVerificationId,
+//                    otpCode
+//                )
+//            )
+
         } else {
-            binding.error.text = getString(R.string.error_empty_otp)
+            binding.editTextUsername.error = getString(R.string.error_empty_otp)
+            loginProgressBar.hide()
         }
     }
 
@@ -148,9 +166,41 @@ class LoginFragment : Fragment(), Injectable {
         binding.otpSubmitClickListener = otpSubmitListener
         binding.resendClicklistener = resendClickListener
         binding.editTextUsername.addTextChangedListener {
-            binding.error.text = ""
+            binding.editTextUsername.error = null
         }
-        binding.editTextUsername.setOnEditorActionListener(FieldSubmitListener { binding.submit.callOnClick() })
+        val termsAndPolicyText = "By login you are agree to the terms & conditions and privacy policy."
+        val spanText = SpannableString(termsAndPolicyText)
+        val termsClickableSpan: ClickableSpan = object : ClickableSpan() {
+            override fun onClick(textView: View) {
+                Toast.makeText(requireContext(), "terms & conditions", Toast.LENGTH_SHORT).show()
+            }
+            override fun updateDrawState(ds: TextPaint) {
+                super.updateDrawState(ds)
+                ds.isUnderlineText = false
+            }
+        }
+        val termsLinkText = "terms & conditions"
+        val termsStartIndex = termsAndPolicyText.indexOf(termsLinkText)
+        val termsEndIndex = termsAndPolicyText.indexOf(termsLinkText) + termsLinkText.length
+        spanText.setSpan(termsClickableSpan, termsStartIndex, termsEndIndex, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+
+        val privacyClickableSpan: ClickableSpan = object : ClickableSpan() {
+            override fun onClick(textView: View) {
+                Toast.makeText(requireContext(), "privacy policy", Toast.LENGTH_SHORT).show()
+            }
+            override fun updateDrawState(ds: TextPaint) {
+                super.updateDrawState(ds)
+                ds.isUnderlineText = false
+            }
+        }
+        val privacyLinkText = "privacy policy"
+        val privacyStartIndex = termsAndPolicyText.indexOf(privacyLinkText)
+        val privacyEndIndex = termsAndPolicyText.indexOf(privacyLinkText) + privacyLinkText.length
+        spanText.setSpan(privacyClickableSpan, privacyStartIndex, privacyEndIndex, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+
+        binding.termsAndPolicyRadio.text = spanText
+        binding.termsAndPolicyRadio.movementMethod = LinkMovementMethod.getInstance()
+        binding.editTextUsername.setOnEditorActionListener(FieldSubmitListener { binding.ButtonSubmit.callOnClick() })
         mFirebaseAuth = FirebaseAuth.getInstance()
         return binding.root
     }
@@ -168,12 +218,12 @@ class LoginFragment : Fragment(), Injectable {
     }
 
     private fun addOtpKeyListeners() {
-        otp1.setOnEditorActionListener(FieldSubmitListener { submit.callOnClick() })
-        otp2.setOnEditorActionListener(FieldSubmitListener { submit.callOnClick() })
-        otp3.setOnEditorActionListener(FieldSubmitListener { submit.callOnClick() })
-        otp4.setOnEditorActionListener(FieldSubmitListener { submit.callOnClick() })
-        otp5.setOnEditorActionListener(FieldSubmitListener { submit.callOnClick() })
-        otp6.setOnEditorActionListener(FieldSubmitListener { submit.callOnClick() })
+        otp1.setOnEditorActionListener(FieldSubmitListener { ButtonSubmit.callOnClick() })
+        otp2.setOnEditorActionListener(FieldSubmitListener { ButtonSubmit.callOnClick() })
+        otp3.setOnEditorActionListener(FieldSubmitListener { ButtonSubmit.callOnClick() })
+        otp4.setOnEditorActionListener(FieldSubmitListener { ButtonSubmit.callOnClick() })
+        otp5.setOnEditorActionListener(FieldSubmitListener { ButtonSubmit.callOnClick() })
+        otp6.setOnEditorActionListener(FieldSubmitListener { ButtonSubmit.callOnClick() })
         otp1.addTextChangedListener(OtpTextChangeListeners(otp1))
         otp2.addTextChangedListener(OtpTextChangeListeners(otp2))
         otp3.addTextChangedListener(OtpTextChangeListeners(otp3))

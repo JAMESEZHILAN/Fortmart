@@ -1,10 +1,10 @@
 <selector xmlns:android="http://schemas.android.com/apk/res/android" >
     <item
-        android:drawable="@drawable/radio_unselected_lang"
+        android:drawable="@drawable/radio_pressed_lang"
         android:state_checked="true"
         android:state_pressed="true" />
     <item
-        android:drawable="@drawable/radio_selected_lang"
+        android:drawable="@drawable/radio_pressed_lang"
         android:state_pressed="true" />
     <item
         android:drawable="@drawable/radio_selected_lang"

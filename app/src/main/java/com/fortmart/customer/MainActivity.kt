@@ -35,23 +35,33 @@ class MainActivity : AppCompatActivity(), HasSupportFragmentInjector {
     private lateinit var pendingTransitions: () -> Unit
     private val navigationListener =
         NavController.OnDestinationChangedListener { controller, destination, arguments ->
-            pendingTransitions = when (destination.id) {
+            when(destination.id){
+                R.id.navigation_language,
+                R.id.navigation_login,
+                R.id.navigation_store_list,
+                R.id.navigation_product_list-> {
+                    supportActionBar?.apply{
+                        show()
+                        setHomeAsUpIndicator(ContextCompat.getDrawable(this@MainActivity, R.drawable.ic_back))
+                    }
+                    bottom_nav_view.hide()
+                }
                 R.id.navigation_stores,
                 R.id.navigation_second_screen,
                 R.id.navigation_third_screen -> {
-                    bottom_nav_view.show();
-                    {
-                        supportActionBar?.hide()
-                    }
+                    bottom_nav_view.show()
                 }
+            }
+            pendingTransitions = when (destination.id) {
+                R.id.navigation_stores,
+                R.id.navigation_second_screen,
+                R.id.navigation_third_screen,
                 R.id.navigation_category_list->{
                     {
                         supportActionBar?.hide()
                     }
                 }
                 R.id.navigation_store_list->{
-                    supportActionBar?.show()
-                    bottom_nav_view.hide();
                     {
                         supportActionBar?.apply {
                             setBackgroundDrawable(
@@ -80,8 +90,6 @@ class MainActivity : AppCompatActivity(), HasSupportFragmentInjector {
                     }
                 }
                 R.id.navigation_product_list->{
-                    supportActionBar?.show()
-                    bottom_nav_view.hide();
                     {
                         supportActionBar?.apply {
                             setBackgroundDrawable(
