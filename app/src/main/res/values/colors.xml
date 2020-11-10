@@ -2,10 +2,10 @@
 <resources>
 
     <color name="colorPrimary">#ECF3F3</color>
-    <color name="colorPrimaryDark">#E8505B</color>
-    <color name="colorAccent">#2CB9F5</color>
+    <color name="colorPrimaryDark">#2CB9F5</color>
+    <color name="colorAccent">#E8505B</color>
 
-    <color name="colorRipple">#80efa603</color>
+    <color name="colorRipple">#80E8505B</color>
 
     <color name="colorYellowGradientLight">#ffdf9e</color>
     <color name="colorYellowGradientDark">#ffbb65</color>

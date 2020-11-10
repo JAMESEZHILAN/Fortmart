@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="@dimen/size_16"
-    app:cardBackgroundColor="@color/colorWhite"
+    app:cardBackgroundColor="@color/colorBlueBackground"
     app:cardCornerRadius="@dimen/size_08"
     app:cardElevation="@dimen/size_04">
 
@@ -29,9 +29,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/size_04"
-            android:textColor="@color/colorTextBlack"
-            android:textSize="@dimen/text_size_18"
-            android:fontFamily="@font/medium"
+            android:textSize="@dimen/text_size_16"
+            android:fontFamily="@font/regular"
+            android:textAlignment="center"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

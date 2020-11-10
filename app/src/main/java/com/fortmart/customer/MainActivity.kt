@@ -37,28 +37,49 @@ class MainActivity : AppCompatActivity(), HasSupportFragmentInjector {
         NavController.OnDestinationChangedListener { controller, destination, arguments ->
             when(destination.id){
                 R.id.navigation_language,
-                R.id.navigation_login,
-                R.id.navigation_store_list,
-                R.id.navigation_product_list-> {
+                R.id.navigation_login -> {
                     supportActionBar?.apply{
                         show()
                         setHomeAsUpIndicator(ContextCompat.getDrawable(this@MainActivity, R.drawable.ic_back))
                     }
                     bottom_nav_view.hide()
                 }
-                R.id.navigation_stores,
+                R.id.navigation_category_list,
                 R.id.navigation_second_screen,
                 R.id.navigation_third_screen -> {
+                    supportActionBar?.setBackgroundDrawable(ContextCompat.getDrawable(this, R.drawable.bg_dashboard_actionbar))
                     bottom_nav_view.show()
                 }
             }
             pendingTransitions = when (destination.id) {
-                R.id.navigation_stores,
+                R.id.navigation_category_list,
                 R.id.navigation_second_screen,
-                R.id.navigation_third_screen,
-                R.id.navigation_category_list->{
+                R.id.navigation_third_screen -> {
                     {
-                        supportActionBar?.hide()
+                        supportActionBar?.apply {
+                            setDisplayShowTitleEnabled(true)
+                            setDisplayUseLogoEnabled(false)
+                            setDisplayShowCustomEnabled(true)
+                            displayOptions = ActionBar.DISPLAY_SHOW_CUSTOM
+                            setCustomView(R.layout.actionbar_address)
+                            val title = findViewById<TextView>(
+                                resources.getIdentifier(
+                                    "action_bar_title",
+                                    "id",
+                                    packageName
+                                )
+                            )
+                            val subtitle = findViewById<TextView>(
+                                resources.getIdentifier(
+                                    "action_bar_subtitle",
+                                    "id",
+                                    packageName
+                                )
+                            )
+                            title.text = "Velachery - 600098"
+                            subtitle.text = "678, Gangai amman koil street"
+                            setDisplayHomeAsUpEnabled(false)
+                        }
                     }
                 }
                 R.id.navigation_store_list->{

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/navigation_stores"
-        android:icon="@drawable/ic_home"
-        android:title="@string/title_home"/>
+        android:id="@+id/navigation_category_list"
+        android:icon="@drawable/ic_menu_items"
+        android:title="@string/title_items"/>
     <item
         android:id="@+id/navigation_second_screen"
-        android:icon="@drawable/ic_ad"
-        android:title="@string/title_ad"/>
+        android:icon="@drawable/ic_menu_orders"
+        android:title="@string/title_orders"/>
     <item
         android:id="@+id/navigation_third_screen"
         android:icon="@drawable/ic_settings"

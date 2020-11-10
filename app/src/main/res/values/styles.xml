@@ -7,8 +7,8 @@
         <item name="android:fontFamily">@font/regular</item>
         <item name="android:windowFullscreen">true</item>
         <item name="actionBarTheme">@style/LoginActionBarTheme</item>
+        <item name="android:actionMenuTextColor">@color/colorAccent</item>
     </style>
-
     <style name="LoginActionBarTheme" parent="ThemeOverlay.AppCompat.ActionBar">
         <item name="actionBarStyle">@style/LoginActionBarStyle</item>
     </style>
@@ -25,6 +25,7 @@
 
     <style name="DashboardTheme" parent="MainTheme">
         <item name="actionBarTheme">@style/DarkActionBarTheme</item>
+        <item name="actionBarSize">72dp</item>
     </style>
 
     <style name="DarkActionBarTheme" parent="ThemeOverlay.AppCompat.ActionBar">
@@ -33,7 +34,8 @@
     </style>
 
     <style name="DarkActionBarStyle" parent="Widget.AppCompat.Light.ActionBar">
-        <item name="background">@color/colorWhite</item>
+        <item name="background">@drawable/bg_dashboard_actionbar</item>
+        <item name="android:layout_marginBottom">5dp</item>
         <item name="titleTextAppearance">@style/ActionBarTextAppearance</item>
         <item name="elevation">@null</item>
     </style>
