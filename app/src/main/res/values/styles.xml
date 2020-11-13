@@ -6,6 +6,7 @@
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:fontFamily">@font/regular</item>
         <item name="android:windowFullscreen">true</item>
+<!--        <item name="android:textColorHint">@color/colorTextHint</item>-->
         <item name="actionBarTheme">@style/LoginActionBarTheme</item>
         <item name="android:actionMenuTextColor">@color/colorAccent</item>
     </style>

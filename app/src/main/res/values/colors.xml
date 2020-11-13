@@ -38,6 +38,7 @@
     <color name="colorDocument">#ffce7b</color>
     <color name="colorUploadDocBg">#9298a5</color>
     <color name="colorUnderline">#dfdfdf</color>
+    <color name="colorTextHint">#5B5454</color>
     <color name="background2">#E6E9EC</color>
     <color name="statements">#f2f3f5</color>
 
