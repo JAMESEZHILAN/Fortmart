@@ -1,5 +1,6 @@
 package com.fortmart.customer.ui.dashboard.stores.storeList.categoryList.productList
 
+import android.graphics.Paint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -30,6 +31,7 @@ class ProductListRVAdapter(private val mData: Array<ProductDetails>): RecyclerVi
             binding.add.setOnClickListener{
                 itemClickListener?.invoke(position, it)
             }
+            binding.textView4.paintFlags = Paint.STRIKE_THRU_TEXT_FLAG
         }
     }
 

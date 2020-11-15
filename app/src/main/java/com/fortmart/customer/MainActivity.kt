@@ -57,6 +57,20 @@ class MainActivity : AppCompatActivity(), HasSupportFragmentInjector {
 
                 R.id.navigation_product_list-> {
                     bottom_nav_view.hide()
+                    supportActionBar?.apply {
+                        setDisplayShowTitleEnabled(false)
+                        setDisplayShowCustomEnabled(false)
+                        setDisplayHomeAsUpEnabled(true)
+                        setHomeAsUpIndicator(ContextCompat.getDrawable(this@MainActivity, R.drawable.ic_back))
+                        setDisplayShowHomeEnabled(true)
+                        setDisplayUseLogoEnabled(true)
+                        setLogo(
+                            ContextCompat.getDrawable(
+                                this@MainActivity,
+                                R.drawable.ic_fortmart
+                            )
+                        )
+                    }
                 }
             }
             pendingTransitions = when (destination.id) {

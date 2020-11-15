@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorBlueBackground"
+    android:background="@color/colorWhite"
     tools:context=".ui.dashboard.stores.storeList.categoryList.productList.ProductListFragment">
 
     <LinearLayout
@@ -21,7 +21,6 @@
             android:id="@+id/labelStores2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/colorBlueBackground"
             android:fontFamily="@font/medium"
             android:text="Fruits &amp; vegetables"
             android:textColor="@color/colorTextBlack"
@@ -35,14 +34,32 @@
     </LinearLayout>
 
 
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/searchView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/size_08"
+        android:layout_marginTop="@dimen/size_16"
+        android:layout_marginEnd="@dimen/size_08"
+        android:background="@drawable/bg_product_search"
+        android:elevation="@dimen/size_04"
+        app:defaultQueryHint="Search products"
+        app:iconifiedByDefault="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/label"
+        app:searchIcon="@drawable/ic_search" />
+
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/subCategoryListRV"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/size_16"
         app:layout_constraintBottom_toTopOf="@+id/productListRV"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/label" />
+        app:layout_constraintTop_toBottomOf="@+id/searchView" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/productListRV"
