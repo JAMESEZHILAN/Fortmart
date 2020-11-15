@@ -14,7 +14,9 @@
         android:supportsRtl="true"
         android:theme="@style/MySplashTheme">
 
-        <activity android:name="com.fortmart.customer.MainActivity" >
+        <activity
+            android:name="com.fortmart.customer.MainActivity"
+            android:windowSoftInputMode="stateHidden">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

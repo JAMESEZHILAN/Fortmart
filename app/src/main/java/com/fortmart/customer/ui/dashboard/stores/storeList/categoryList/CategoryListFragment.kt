@@ -2,11 +2,13 @@ package com.fortmart.customer.ui.dashboard.stores.storeList.categoryList
 
 import android.app.SearchManager
 import android.content.Context
+import android.graphics.Typeface
 import android.os.Bundle
+import android.util.TypedValue
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.View
-import android.widget.EditText
+import android.widget.TextView
 import androidx.appcompat.widget.SearchView
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.viewModels
@@ -17,7 +19,9 @@ import com.fortmart.customer.databinding.FragmentCategoryListBinding
 import com.fortmart.customer.di.ViewModelFactory
 import com.fortmart.customer.model.other.ImageMenu
 import com.fortmart.customer.ui.dashboard.BaseFragment
+import com.google.android.material.snackbar.Snackbar
 import javax.inject.Inject
+
 
 class CategoryListFragment : BaseFragment(R.layout.fragment_category_list) {
 
@@ -63,6 +67,48 @@ class CategoryListFragment : BaseFragment(R.layout.fragment_category_list) {
             adapter = rvAdapter!!
         }
         setUpSearchView(binding?.searchView!!)
+        setUpKart()
+    }
+
+    private fun setUpKart(){
+        val kartSnackBar = Snackbar.make(
+            binding?.root!!,
+            "Added 4 items",
+            Snackbar.LENGTH_INDEFINITE
+        )
+        kartSnackBar.setAction("${getString(R.string.currency)}123") {
+
+        }
+        val kartView = kartSnackBar.view
+        val snackBarTextView = kartView.findViewById<TextView>(com.google.android.material.R.id.snackbar_text)
+        val snackBarAction = kartView.findViewById<TextView>(com.google.android.material.R.id.snackbar_action)
+        snackBarTextView.setTextSize(TypedValue.COMPLEX_UNIT_PX, 28F)
+        snackBarTextView.setTypeface(snackBarTextView.typeface, Typeface.BOLD)
+        snackBarAction.setTextSize(TypedValue.COMPLEX_UNIT_PX, 28F)
+        snackBarAction.setTypeface(snackBarTextView.typeface, Typeface.BOLD)
+        snackBarAction.setTextColor(
+            ContextCompat.getColor(
+                requireContext(),
+                R.color.colorTextWhite
+            )
+        )
+        snackBarAction.setCompoundDrawablesWithIntrinsicBounds(
+            null, null, ContextCompat.getDrawable(
+                requireContext(),
+                R.drawable.ic_kart_link
+            ), null
+        )
+        snackBarAction.compoundDrawablePadding = resources.getDimensionPixelOffset(R.dimen.size_08)
+        kartView.setBackgroundColor(
+            ContextCompat.getColor(
+                requireContext(),
+                R.color.colorAccent
+            )
+        )
+        kartView.setOnClickListener {
+            kartSnackBar.dismiss()
+        }
+        kartSnackBar.show()
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {

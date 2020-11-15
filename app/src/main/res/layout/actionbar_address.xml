@@ -20,7 +20,7 @@
             android:id="@+id/action_bar_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="@dimen/text_size_18"
+            android:textSize="@dimen/text_size_20"
             android:fontFamily="@font/medium"
             android:textColor="@color/colorTextBlack"
             android:layout_gravity="start"/>
@@ -28,7 +28,8 @@
             android:id="@+id/action_bar_subtitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="@dimen/text_size_14"
+            android:textSize="@dimen/text_size_16"
+            android:textColor="@color/colorTextBlack"
             android:layout_gravity="start"/>
     </LinearLayout>
 </LinearLayout>

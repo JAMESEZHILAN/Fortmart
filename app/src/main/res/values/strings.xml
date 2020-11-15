@@ -18,4 +18,5 @@
     <string name="label_resend_otp_disabled">Resend OTP in</string>
     <string name="label_resend_otp_enabled">Resend OTP</string>
     <string name="country_code">+91</string>
+    <string name="currency">₹</string>
 </resources>

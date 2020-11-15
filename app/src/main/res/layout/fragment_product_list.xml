@@ -1,37 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/colorBlueBackground"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorBlueBackground"
     tools:context=".ui.dashboard.stores.storeList.categoryList.productList.ProductListFragment">
 
-    <View
-        android:id="@+id/divider2"
-        android:layout_width="0dp"
-        android:layout_height="1dp"
-        android:layout_marginStart="@dimen/size_08"
-        android:layout_marginEnd="@dimen/size_08"
-        android:background="@color/colorDarkGrey"
-        app:layout_constraintBottom_toBottomOf="@+id/labelStores2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/labelStores2" />
-
-    <TextView
-        android:id="@+id/labelStores2"
+    <LinearLayout
+        android:id="@+id/label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:orientation="vertical"
         android:padding="@dimen/size_08"
-        android:background="@color/colorBlueBackground"
-        android:text="Products"
-        android:textSize="@dimen/text_size_18"
         app:layout_constraintBottom_toTopOf="@+id/dashboardMenuRV"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/location" />
+        app:layout_constraintTop_toBottomOf="@+id/location">
+
+        <TextView
+            android:id="@+id/labelStores2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/colorBlueBackground"
+            android:fontFamily="@font/medium"
+            android:text="Fruits &amp; vegetables"
+            android:textColor="@color/colorTextBlack"
+            android:textSize="@dimen/text_size_24" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fortmart - Online store" />
+    </LinearLayout>
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/subCategoryListRV"
@@ -40,7 +42,7 @@
         app:layout_constraintBottom_toTopOf="@+id/productListRV"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/labelStores2" />
+        app:layout_constraintTop_toBottomOf="@+id/label" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/productListRV"

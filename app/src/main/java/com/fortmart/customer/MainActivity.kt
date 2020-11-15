@@ -4,11 +4,13 @@ import android.content.Context
 import android.content.SharedPreferences
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
+import android.view.View
 import android.widget.TextView
 import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.MutableLiveData
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.*
@@ -17,6 +19,7 @@ import com.fortmart.customer.shared.Constants
 import com.fortmart.customer.shared.Constants.LOGGED_IN
 import com.fortmart.customer.utils.hide
 import com.fortmart.customer.utils.show
+import com.google.android.material.snackbar.Snackbar
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.support.HasSupportFragmentInjector
 import kotlinx.android.synthetic.main.activity_main.*
@@ -33,6 +36,7 @@ class MainActivity : AppCompatActivity(), HasSupportFragmentInjector {
     private var isLoggedIn: Boolean? = null
     private lateinit var sharedPref: SharedPreferences
     private lateinit var pendingTransitions: () -> Unit
+    private val kartLiveData = MutableLiveData(1245)
     private val navigationListener =
         NavController.OnDestinationChangedListener { controller, destination, arguments ->
             when(destination.id){
@@ -49,6 +53,10 @@ class MainActivity : AppCompatActivity(), HasSupportFragmentInjector {
                 R.id.navigation_third_screen -> {
                     supportActionBar?.setBackgroundDrawable(ContextCompat.getDrawable(this, R.drawable.bg_dashboard_actionbar))
                     bottom_nav_view.show()
+                }
+
+                R.id.navigation_product_list-> {
+                    bottom_nav_view.hide()
                 }
             }
             pendingTransitions = when (destination.id) {
@@ -113,36 +121,18 @@ class MainActivity : AppCompatActivity(), HasSupportFragmentInjector {
                 R.id.navigation_product_list->{
                     {
                         supportActionBar?.apply {
-                            setBackgroundDrawable(
-                                ColorDrawable(
-                                    ContextCompat.getColor(
-                                        this@MainActivity,
-                                        R.color.colorBlueBackground
-                                    )
+                            setDisplayShowTitleEnabled(false)
+                            setDisplayShowCustomEnabled(false)
+                            setDisplayHomeAsUpEnabled(true)
+                            setHomeAsUpIndicator(ContextCompat.getDrawable(this@MainActivity, R.drawable.ic_back))
+                            setDisplayShowHomeEnabled(true)
+                            setDisplayUseLogoEnabled(true)
+                            setLogo(
+                                ContextCompat.getDrawable(
+                                    this@MainActivity,
+                                    R.drawable.ic_fortmart
                                 )
                             )
-                            setDisplayShowTitleEnabled(true)
-                            setDisplayUseLogoEnabled(false)
-                            setDisplayShowCustomEnabled(true)
-                            displayOptions = ActionBar.DISPLAY_SHOW_CUSTOM
-                            setCustomView(R.layout.actionbar_subtitle)
-                            val title = findViewById<TextView>(
-                                resources.getIdentifier(
-                                    "action_bar_title",
-                                    "id",
-                                    packageName
-                                )
-                            )
-                            val subtitle = findViewById<TextView>(
-                                resources.getIdentifier(
-                                    "action_bar_subtitle",
-                                    "id",
-                                    packageName
-                                )
-                            )
-                            title.text = "Fruits & vegetables"
-                            subtitle.text = "Fortmart Online store"
-                            setDisplayHomeAsUpEnabled(false)
                         }
                     }
                 }

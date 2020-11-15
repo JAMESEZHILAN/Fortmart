@@ -26,11 +26,6 @@ class ProductListFragment : BaseFragment(R.layout.fragment_product_list) {
     private var rvAdapter: ProductListRVAdapter? = null
     private var subcategoryvAdapter: SubCategoryListRVAdapter? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setHasOptionsMenu(true)
-    }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentProductListBinding.bind(view)
@@ -58,10 +53,6 @@ class ProductListFragment : BaseFragment(R.layout.fragment_product_list) {
             layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, true)
             adapter = subcategoryvAdapter!!
         }
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        activity?.menuInflater?.inflate(R.menu.search, menu)
     }
 
 }
