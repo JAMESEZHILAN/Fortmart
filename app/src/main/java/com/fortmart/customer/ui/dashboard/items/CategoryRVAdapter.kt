@@ -1,4 +1,4 @@
-package com.fortmart.customer.ui.dashboard.stores.storeList.categoryList
+package com.fortmart.customer.ui.dashboard.items
 
 import android.view.LayoutInflater
 import android.view.View

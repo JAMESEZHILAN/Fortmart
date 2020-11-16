@@ -18,10 +18,10 @@
     </fragment>
 
     <fragment
-        android:id="@+id/navigation_second_screen"
-        android:name="com.fortmart.customer.ui.dashboard.second.SecondFragment"
+        android:id="@+id/navigation_orders"
+        android:name="com.fortmart.customer.ui.dashboard.orders.OrdersFragment"
         android:label="@string/title_orders"
-        tools:layout="@layout/fragment_second" />
+        tools:layout="@layout/fragment_orders" />
 
     <fragment
         android:id="@+id/navigation_third_screen"
@@ -46,7 +46,7 @@
 
     <fragment
         android:id="@+id/navigation_category_list"
-        android:name="com.fortmart.customer.ui.dashboard.stores.storeList.categoryList.CategoryListFragment"
+        android:name="com.fortmart.customer.ui.dashboard.items.CategoryListFragment"
         android:label="@string/title_category_list"
         app:enterAnim="@transition/slide_in"
         app:popExitAnim="@transition/slide_out"
@@ -57,7 +57,7 @@
     </fragment>
     <fragment
         android:id="@+id/navigation_product_list"
-        android:name="com.fortmart.customer.ui.dashboard.stores.storeList.categoryList.productList.ProductListFragment"
+        android:name="com.fortmart.customer.ui.dashboard.items.productList.ProductListFragment"
         android:label="@string/title_product_list"
         app:enterAnim="@transition/slide_in"
         app:popExitAnim="@transition/slide_out"

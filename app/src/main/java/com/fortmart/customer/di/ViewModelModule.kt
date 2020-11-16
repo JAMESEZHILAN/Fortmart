@@ -4,8 +4,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.fortmart.customer.ui.dashboard.stores.StoresViewModel
 import com.fortmart.customer.ui.dashboard.stores.storeList.StoreListViewModel
-import com.fortmart.customer.ui.dashboard.stores.storeList.categoryList.CategoryListViewModel
-import com.fortmart.customer.ui.dashboard.second.SecondViewModel
+import com.fortmart.customer.ui.dashboard.items.CategoryListViewModel
+import com.fortmart.customer.ui.dashboard.orders.OrdersViewModel
 import com.fortmart.customer.ui.dashboard.third.ThirdViewModel
 import com.fortmart.customer.ui.login.login.LoginViewModel
 import dagger.Binds
@@ -27,8 +27,8 @@ abstract class ViewModelModule {
 
     @Binds
     @IntoMap
-    @ViewModelKey(SecondViewModel::class)
-    abstract fun bindSecondViewModel(viewModel: SecondViewModel): ViewModel
+    @ViewModelKey(OrdersViewModel::class)
+    abstract fun bindSecondViewModel(viewModel: OrdersViewModel): ViewModel
 
     @Binds
     @IntoMap

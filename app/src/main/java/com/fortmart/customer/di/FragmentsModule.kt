@@ -2,9 +2,9 @@ package com.fortmart.customer.di
 
 import com.fortmart.customer.ui.dashboard.stores.StoresFragment
 import com.fortmart.customer.ui.dashboard.stores.storeList.StoreListFragment
-import com.fortmart.customer.ui.dashboard.stores.storeList.categoryList.CategoryListFragment
-import com.fortmart.customer.ui.dashboard.second.SecondFragment
-import com.fortmart.customer.ui.dashboard.stores.storeList.categoryList.productList.ProductListFragment
+import com.fortmart.customer.ui.dashboard.items.CategoryListFragment
+import com.fortmart.customer.ui.dashboard.orders.OrdersFragment
+import com.fortmart.customer.ui.dashboard.items.productList.ProductListFragment
 import com.fortmart.customer.ui.dashboard.third.ThirdFragment
 import com.fortmart.customer.ui.login.login.LoginFragment
 import com.fortmart.customer.ui.login.language.LanguageFragment
@@ -24,7 +24,7 @@ abstract class FragmentsModule {
     abstract fun contributeStoresFragment(): StoresFragment
 
     @ContributesAndroidInjector
-    abstract fun contributeSecondFragment(): SecondFragment
+    abstract fun contributeSecondFragment(): OrdersFragment
 
     @ContributesAndroidInjector
     abstract fun contributeThirdFragment(): ThirdFragment

@@ -1,15 +1,12 @@
-package com.fortmart.customer.ui.dashboard.stores.storeList.categoryList.productList
+package com.fortmart.customer.ui.dashboard.items.productList
 
 import android.graphics.Typeface
 import android.os.Bundle
 import android.util.TypedValue
-import android.view.Menu
-import android.view.MenuInflater
 import android.view.View
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.viewModels
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.fortmart.customer.R
 import com.fortmart.customer.databinding.FragmentProductListBinding
