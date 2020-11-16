@@ -5,7 +5,7 @@ import com.fortmart.customer.ui.dashboard.stores.storeList.StoreListFragment
 import com.fortmart.customer.ui.dashboard.items.CategoryListFragment
 import com.fortmart.customer.ui.dashboard.orders.OrdersFragment
 import com.fortmart.customer.ui.dashboard.items.productList.ProductListFragment
-import com.fortmart.customer.ui.dashboard.third.ThirdFragment
+import com.fortmart.customer.ui.dashboard.settings.SettingsFragment
 import com.fortmart.customer.ui.login.login.LoginFragment
 import com.fortmart.customer.ui.login.language.LanguageFragment
 import dagger.Module
@@ -27,7 +27,7 @@ abstract class FragmentsModule {
     abstract fun contributeSecondFragment(): OrdersFragment
 
     @ContributesAndroidInjector
-    abstract fun contributeThirdFragment(): ThirdFragment
+    abstract fun contributeThirdFragment(): SettingsFragment
 
     @ContributesAndroidInjector
     abstract fun contributeStoreListFragment(): StoreListFragment

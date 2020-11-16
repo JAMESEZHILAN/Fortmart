@@ -59,12 +59,12 @@ class MainActivity : AppCompatActivity(), HasSupportFragmentInjector {
                     )
                     bottom_nav_view.show()
                 }
-                R.id.navigation_third_screen -> {
+                R.id.navigation_settings -> {
                     supportActionBar?.setBackgroundDrawable(
                         ColorDrawable(
                             ContextCompat.getColor(
                                 this,
-                                R.color.colorWhite
+                                R.color.colorSettingsBackground
                             )
                         )
                     )
@@ -140,7 +140,7 @@ class MainActivity : AppCompatActivity(), HasSupportFragmentInjector {
                         }
                     }
                 }
-                R.id.navigation_third_screen -> {
+                R.id.navigation_settings -> {
                     {
                         supportActionBar?.apply {
                             setDisplayShowCustomEnabled(false)

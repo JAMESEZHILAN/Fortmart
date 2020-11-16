@@ -44,5 +44,6 @@
 
     <color name="colorBlueBackground">#ECF3F3</color>
     <color name="colorButtonSubmit">#2CB9F5</color>
+    <color name="colorSettingsBackground">#FFF6E1</color>
 
 </resources>

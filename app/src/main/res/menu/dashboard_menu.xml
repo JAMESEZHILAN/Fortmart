@@ -9,7 +9,7 @@
         android:icon="@drawable/ic_menu_orders"
         android:title="@string/title_orders"/>
     <item
-        android:id="@+id/navigation_third_screen"
+        android:id="@+id/navigation_settings"
         android:icon="@drawable/ic_settings"
         android:title="@string/title_settings"/>
 </menu>

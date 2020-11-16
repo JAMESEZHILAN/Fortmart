@@ -24,10 +24,10 @@
         tools:layout="@layout/fragment_orders" />
 
     <fragment
-        android:id="@+id/navigation_third_screen"
-        android:name="com.fortmart.customer.ui.dashboard.third.ThirdFragment"
+        android:id="@+id/navigation_settings"
+        android:name="com.fortmart.customer.ui.dashboard.settings.SettingsFragment"
         android:label="@string/title_settings"
-        tools:layout="@layout/fragment_third" />
+        tools:layout="@layout/fragment_settings" />
 
     <fragment
         android:id="@+id/navigation_store_list"

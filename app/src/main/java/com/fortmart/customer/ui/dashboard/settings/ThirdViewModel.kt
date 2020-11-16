@@ -1,4 +1,4 @@
-package com.fortmart.customer.ui.dashboard.third
+package com.fortmart.customer.ui.dashboard.settings
 
 import androidx.lifecycle.ViewModel
 import com.fortmart.customer.data.repository.DashboardRepository

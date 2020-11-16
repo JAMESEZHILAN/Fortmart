@@ -6,7 +6,7 @@ import com.fortmart.customer.ui.dashboard.stores.StoresViewModel
 import com.fortmart.customer.ui.dashboard.stores.storeList.StoreListViewModel
 import com.fortmart.customer.ui.dashboard.items.CategoryListViewModel
 import com.fortmart.customer.ui.dashboard.orders.OrdersViewModel
-import com.fortmart.customer.ui.dashboard.third.ThirdViewModel
+import com.fortmart.customer.ui.dashboard.settings.ThirdViewModel
 import com.fortmart.customer.ui.login.login.LoginViewModel
 import dagger.Binds
 import dagger.Module
