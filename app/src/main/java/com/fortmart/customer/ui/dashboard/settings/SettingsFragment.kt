@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.fortmart.customer.R
 import com.fortmart.customer.databinding.FragmentOrdersBinding
 import com.fortmart.customer.databinding.FragmentSettingsBinding
@@ -33,7 +34,7 @@ class SettingsFragment : BaseFragment(R.layout.fragment_settings) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentSettingsBinding.bind(view)
         binding?.clickListener = View.OnClickListener {
-
+            findNavController().navigate(SettingsFragmentDirections.actionNavigationSettingsToNavigationAddresses())
         }
     }
 
