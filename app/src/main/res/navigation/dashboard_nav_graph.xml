@@ -14,7 +14,7 @@
             android:id="@+id/actionToStoreList"
             app:destination="@+id/navigation_store_list"
             app:enterAnim="@transition/slide_in"
-            app:popExitAnim="@transition/slide_out"/>
+            app:popExitAnim="@transition/slide_out" />
     </fragment>
 
     <fragment
@@ -27,7 +27,11 @@
         android:id="@+id/navigation_settings"
         android:name="com.fortmart.customer.ui.dashboard.settings.SettingsFragment"
         android:label="@string/title_settings"
-        tools:layout="@layout/fragment_settings" />
+        tools:layout="@layout/fragment_settings" >
+        <action
+            android:id="@+id/action_navigation_settings_to_navigation_map"
+            app:destination="@id/navigation_map" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_store_list"
@@ -40,7 +44,7 @@
             android:id="@+id/actionToCategoryList"
             app:destination="@id/navigation_category_list"
             app:enterAnim="@transition/slide_in"
-            app:popExitAnim="@transition/slide_out"/>
+            app:popExitAnim="@transition/slide_out" />
     </fragment>
 
 
@@ -50,7 +54,7 @@
         android:label="@string/title_category_list"
         app:enterAnim="@transition/slide_in"
         app:popExitAnim="@transition/slide_out"
-        tools:layout="@layout/fragment_category_list" >
+        tools:layout="@layout/fragment_category_list">
         <action
             android:id="@+id/actionToProductList"
             app:destination="@id/navigation_product_list" />
@@ -62,5 +66,10 @@
         app:enterAnim="@transition/slide_in"
         app:popExitAnim="@transition/slide_out"
         tools:layout="@layout/fragment_product_list" />
+    <fragment
+        android:id="@+id/navigation_map"
+        android:name="com.fortmart.customer.ui.dashboard.addresses.MapFragment"
+        android:label="Map"
+        tools:layout="@layout/fragment_map" />
 
 </navigation>

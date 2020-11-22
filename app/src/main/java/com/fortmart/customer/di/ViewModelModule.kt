@@ -2,11 +2,12 @@ package com.fortmart.customer.di
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import com.fortmart.customer.ui.dashboard.addresses.MapViewModel
 import com.fortmart.customer.ui.dashboard.stores.StoresViewModel
 import com.fortmart.customer.ui.dashboard.stores.storeList.StoreListViewModel
 import com.fortmart.customer.ui.dashboard.items.CategoryListViewModel
 import com.fortmart.customer.ui.dashboard.orders.OrdersViewModel
-import com.fortmart.customer.ui.dashboard.settings.ThirdViewModel
+import com.fortmart.customer.ui.dashboard.settings.SettingsViewModel
 import com.fortmart.customer.ui.login.login.LoginViewModel
 import dagger.Binds
 import dagger.Module
@@ -32,8 +33,8 @@ abstract class ViewModelModule {
 
     @Binds
     @IntoMap
-    @ViewModelKey(ThirdViewModel::class)
-    abstract fun bindThirdViewModel(viewModel: ThirdViewModel): ViewModel
+    @ViewModelKey(SettingsViewModel::class)
+    abstract fun bindThirdViewModel(viewModel: SettingsViewModel): ViewModel
 
     @Binds
     @IntoMap
@@ -44,6 +45,11 @@ abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(CategoryListViewModel::class)
     abstract fun bindActionViewModel(viewModel: CategoryListViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(MapViewModel::class)
+    abstract fun bindActionViewModel(viewModel: MapViewModel): ViewModel
 
     @Binds
     abstract fun bindsViewModelFactory(factory: ViewModelFactory): ViewModelProvider.Factory

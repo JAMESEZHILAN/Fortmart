@@ -19,4 +19,6 @@
     <string name="label_resend_otp_enabled">Resend OTP</string>
     <string name="country_code">+91</string>
     <string name="currency">₹</string>
+
+    <string name="google_maps_api_key">AIzaSyD4G0DisUalryoItJRsx3KlGKWZWf7RF9U</string>
 </resources>

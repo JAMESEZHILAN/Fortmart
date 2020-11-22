@@ -1,5 +1,6 @@
 package com.fortmart.customer.di
 
+import com.fortmart.customer.ui.dashboard.addresses.MapFragment
 import com.fortmart.customer.ui.dashboard.stores.StoresFragment
 import com.fortmart.customer.ui.dashboard.stores.storeList.StoreListFragment
 import com.fortmart.customer.ui.dashboard.items.CategoryListFragment
@@ -37,4 +38,7 @@ abstract class FragmentsModule {
 
     @ContributesAndroidInjector
     abstract fun contributeProductListFragment(): ProductListFragment
+
+    @ContributesAndroidInjector
+    abstract fun contributeMapFragment(): MapFragment
 }
